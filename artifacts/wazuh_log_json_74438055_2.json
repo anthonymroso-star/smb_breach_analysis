@@ -1,0 +1,81 @@
+{
+    "predecoder": {
+        "program_name": "smbd",
+        "timestamp": "2026-08-08T07:44:36.170577+01:00"
+    },
+    "agent": {
+        "ip": "192.168.10.10",
+        "name": "targetserver",
+        "id": "001"
+    },
+    "manager": {
+        "name": "wazuh.manager"
+    },
+    "data": {
+        "uid": "0",
+        "dstuser": "dummy_attacker(uid=1001)"
+    },
+    "rule": {
+        "mail": false,
+        "level": 9,
+        "pci_dss": [
+            "10.2.5",
+            "10.6.1"
+        ],
+        "hipaa": [
+            "164.312.b"
+        ],
+        "tsc": [
+            "CC6.8",
+            "CC7.2",
+            "CC7.3"
+        ],
+        "description": "Successful login during non-business hours.",
+        "groups": [
+            "policy_violation",
+            "login_time"
+        ],
+        "nist_800_53": [
+            "AU.14",
+            "AC.7",
+            "AU.6"
+        ],
+        "gdpr": [
+            "IV_35.7.d",
+            "IV_32.2"
+        ],
+        "firedtimes": 2,
+        "mitre": {
+            "technique": [
+                "Valid Accounts"
+            ],
+            "id": [
+                "T1078"
+            ],
+            "tactic": [
+                "Defense Evasion",
+                "Persistence",
+                "Privilege Escalation",
+                "Initial Access"
+            ]
+        },
+        "id": "17101",
+        "gpg13": [
+            "7.1",
+            "7.2"
+        ]
+    },
+    "decoder": {
+        "parent": "pam",
+        "name": "pam"
+    },
+    "full_log": "2026-08-08T07:44:36.170577+01:00 targetserver smbd: pam_unix(samba:session): session opened for user dummy_attacker(uid=1001) by (uid=0)",
+    "input": {
+        "type": "log"
+    },
+    "@timestamp": "2026-08-08T06:44:38.055Z",
+    "location": "/var/log/auth.log",
+    "id": "1786171478.41308",
+    "timestamp": "2026-08-08T06:44:38.055+0000",
+    "_id": "KRwd4J8BZlooRC3B1lO7"
+}
