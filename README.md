@@ -1,10 +1,10 @@
-# Enterprise SMB Forensics, SIEM Auditing & Incident Response Lab  
-A hands-on engineering lab focused on triaging a privileged account takeover, unmasking an anonymous attacker via raw byte-offset packet dissection, identifying critical application logging deficits, and executing active containment playbooks.
+# Enterprise Forensics, SIEM Auditing & Incident Response  
+A hands-on engineering lab focused on resolving a hijacked management account, unmasking a hidden intruder by analyzing raw data traffic, finding blind spots in system tracking, and launching immediate security containment steps.
 > **Compliance & Data Sanitization Note:** Where applicable, files, scripts, logs, IP addresses, hostnames, and architecture identities within this repository have been sanitized and anonymized in alignment with relevant security frameworks and responsible-disclosure guidelines.
 ## Lab Architecture Overview  
 * **Host Endpoint:** Ubuntu Storage Server `192.168.10.10` (Simulating a localized corporate file-sharing asset).  
-* **SIEM Central Engine:** Wazuh Indexer & Manager v4.7.5 deployed via Docker Compose.  
-* **Forensic Packet Capture:** Gateway Packet Capture Engine (`smb_breach_sanitized.pcapng`) capturing local Port 445 network traces.
+* **SIEM Central Control:** Wazuh Indexer & Manager v4.7.5 deployed via Docker Compose.  
+* **Forensic Packet Capture:** Wireshark Packet Capture  (`smb_breach_sanitized.pcapng`) capturing local Port 445 network traces.
 * **Attacker Asset:** Kali Linux `172.16.0.100` (Utilizing automated password sprays and NetExec protocol testing).  
   
 ## Key Skills Demonstrated  
@@ -15,11 +15,11 @@ A hands-on engineering lab focused on triaging a privileged account takeover, un
 | **Behavioral Threat Hunting** | Identified automated machine logic patterns by isolating zero-latency millisecond session timing collisions. |
 | **JSON Metadata Analysis** | Dissected raw SIEM database logs to confirm root-level execution privilege mappings (`uid: 0`) and rule iterations. |
 | **Defensive Gap Assessment** | Diagnosed default syslog visibility blackouts caused by baseline application configuration levels (`log level = 1`). |
-| **Network Forensics** | Programmed an offline byte-parser using Scapy to reconstruct two-way TCP Port 445 conversation timelines. |
+| **Network Forensics** | Programmed an offline byte-parser with Python using Scapy to reconstruct two-way TCP Port 445 conversation timelines. |
 | **Binary Dissection** | Leveraged the Python Struct engine to extract raw NT Status error codes (`STATUS_LOGON_FAILURE`) at fixed byte offsets. |
-| **Radius Isolation** | Pierced application-layer payloads past the 64-byte SMB2 header to decode literal file system transaction strings. |
-| **Identity Containment** | Forcefully revoked compromised identity handles at both the core OS layer and individual Samba database vaults. |
-| **Technical Communication** | Produced unpolished application metrics into courtroom-ready incident reports and NIST-compliant briefs. |
+| **Radius Isolation** | Checked application-layer payloads past the 64-byte SMB2 header to decode literal file system transaction strings. |
+| **Identity Containment** | Revoked compromised identity handles at both the core OS layer and individual Samba database vaults. |
+| **Technical Communication** | Produced application metrics into courtroom-ready incident reports and NIST-compliant briefs. |
 
   
 ## 📁 Repository Contents  
@@ -30,7 +30,7 @@ A hands-on engineering lab focused on triaging a privileged account takeover, un
   
 ## Featured Project Walkthroughs  
 1. **[Incident Response: (NIST SP 800-61 r2) Detection & Forensic Triaging](./documentation/INC-2026-0808B_NIST.md)**  
-2. **[SMB2 Application Layer Forensics: Python .pcapng File Analysis](./scripts/analyse_smb.py)**
+2. **[Application Layer Forensics: Python / .pcapng File Analysis](./scripts/analyse_smb.py)**
 3. **[Network Trace Program Report: Python Generation Output](./images/terminal_report_output.png)**  
 4. **[Incident Final Report: INC-2026-0808B Automated Account Takeover](./documentation/final-report_INC-2026-0808B.md)**  
   
